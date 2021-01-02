@@ -51,6 +51,7 @@ export const Wrapper = styled.div`
         border-bottom: solid 5px white;
         padding-bottom: 12px;
         margin-bottom: 2rem;
+        margin-top: 2rem;
 
         @media (max-width: ${MEDIA_QUERIES.MEDIUM}) {
           font-size: 1.5rem;

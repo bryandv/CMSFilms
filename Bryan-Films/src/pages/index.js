@@ -79,8 +79,27 @@ const IndexPage = () => {
         <p className= "header-description">{homePageHeaderDescription}</p>
         </div>
 
-       
-      </div>
+        </div>
+
+        <div className="artists">
+          <h2>Featured Films</h2>
+          <div className="artist-items">
+            {homePageFeaturedFilms.map(({film, slug}) => (
+              <Artist key={slug} to={`/${slug}`}>
+                <Image
+                  fluid={film.cover.imageFile.childImageSharp.fluid}
+                  alt={film.cover.altText}
+                />
+                <div className="artist-info">
+                  <p>
+                    {film.name}
+                  </p>
+                </div>
+              </Artist>
+            ))}
+          </div>
+        </div>
+      
     </Wrapper>
   </Layout>
 }
