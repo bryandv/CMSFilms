@@ -1,26 +1,64 @@
 import React from 'react'
 import {graphql} from 'gatsby';
-import Layout from "../../components/Layout"
-import SEO from "../../components/Seo"
-import {Wrapper, Image } from "../templateStyles/artistStyles"
+import Layout from "../components/Layout"
+import SEO from "../components/Seo"
+import {Wrapper, Image } from "../templateStyles/artistStyles";
 
-
-const filmTemplate = ({
+const FilmTemplate = ({
     data:{
         wpcontent:{
             film:{
                 film,
                 genres:{edges:genres},
-            },
-        },
-    },
-}) =>{
-    const { picture1, picture2, picture3 } = film.pictures
-    const pictures = [picture1,picture2,picture3]
-    return <Layout>
-        <SEO title="Film" />
-    </Layout>
-}
+            }
+        }
+    }
+}) => {
+    return (
+        <Layout>
+            <SEO title= "film"/>
+            <Wrapper>
+            <div className="artist-container">
+            <div className="artist-image">
+                <Image
+                    fluid={film.cover.imageFile.childImageSharp.fluid}
+                    alt={film.cover.altText}
+                />
+                <div className="roles">
+                    {genres.map(({ node: genre }) => (
+                        <div key={genre.name} className="role">
+                        {genre.name}
+                    </div>
+                ))}
+                </div>
+            </div>
+
+
+            <div className="artist-info">
+          <h2>
+            {film.name} 
+          </h2>
+          <p className="description">{film.description}</p>
+          <p className="info">
+            <strong>Email:</strong> {film.actors}
+          </p>
+          <p className="info">
+            <strong>Phone:</strong> {film.director}
+          </p>
+          <p className="info">
+            <strong>Height:</strong> {film.duration}
+          </p>
+          <p className="info">
+            <strong>Shoe size:</strong> {film.rating}
+          </p>
+        </div>
+            </div>
+            </Wrapper>
+        </Layout>
+    )
+  }
+  
+  export default FilmTemplate
 
 
 
