@@ -58,14 +58,15 @@ query{
               altText
               sourceUrl
               imageFile{
-                childImageSharp{
-                fluid(quality: 100){
-                ...GatsbyImageSharpFluid_withWebp
-                }
-            }
-        } 
+                      childImageSharp{
+                      fluid(quality: 100){
+                      ...GatsbyImageSharpFluid_withWebp
+                      }
+                  }
+              } 
             }
           }
+          slug
         }
       }
     }
