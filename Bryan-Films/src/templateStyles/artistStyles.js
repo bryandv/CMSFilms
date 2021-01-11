@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
     display: flex;
     margin: 3rem auto;
     width: 90%;
-    background-color: ${COLORS.GREY};
+    background-color: ${COLORS.BLACK};
 
     @media (max-width: ${MEDIA_QUERIES.MEDIUM}) {
       flex-direction: column;
@@ -36,11 +36,11 @@ export const Wrapper = styled.div`
         flex-direction: column;
         justify-content: space-evenly;
         flex-wrap: wrap;
-        color: ${COLORS.SECONDARY};
+        color: ${COLORS.PRIMARY};
         font-family: ${FONT_FAMILIES.TITLE};
         text-transform: uppercase;
         background-color: ${COLORS.GREY};
-        border-right: solid 15px ${COLORS.SECONDARY};
+        border-right: solid 15px ${COLORS.PRIMARY};
 
         @media (max-width: ${MEDIA_QUERIES.MEDIUM}) {
           color: ${COLORS.PRIMARY};
@@ -67,7 +67,8 @@ export const Wrapper = styled.div`
         font-family: ${FONT_FAMILIES.TITLE};
         text-transform: uppercase;
         font-size: 4rem;
-        border-bottom: ${COLORS.WHITE} solid 6px;
+        color: ${COLORS.PRIMARY};
+        
         padding-bottom: 1rem;
         margin-left: auto;
         margin-bottom: 0.5rem;
@@ -111,6 +112,7 @@ export const Wrapper = styled.div`
       .info {
         font-family: 2rem;
         text-transform: uppercase;
+        color: white;
       }
     }
   }

@@ -14,6 +14,8 @@ const FilmTemplate = ({
         }
     }
 }) => {
+  const {picture1, picture2, picture3} = film.pictures
+  const pictures = [picture1, picture2, picture3]
     return (
         <Layout>
             <SEO title= "film"/>
@@ -40,19 +42,33 @@ const FilmTemplate = ({
           </h2>
           <p className="description">{film.description}</p>
           <p className="info">
-            <strong>Email:</strong> {film.actors}
+            <strong>Actors:</strong> {film.actors}
           </p>
           <p className="info">
-            <strong>Phone:</strong> {film.director}
+            <strong>Director:</strong> {film.director}
           </p>
           <p className="info">
-            <strong>Height:</strong> {film.duration}
+            <strong>Duration:</strong> {film.duration}
           </p>
           <p className="info">
-            <strong>Shoe size:</strong> {film.rating}
+            <strong>rating:</strong> {film.rating} /5
+          </p>
+          <p className="info">
+            <strong>release date:</strong> {film.releaseDate} 
           </p>
         </div>
             </div>
+            <div className="artist-pictures">
+               {pictures.map((picture, i) => (
+          <div key={i} className="artist-picture">
+            <Image
+              fluid={picture.imageFile.childImageSharp.fluid}
+              alt={picture.altText}
+            />
+          </div>
+        ))}
+      </div>
+
             </Wrapper>
         </Layout>
     )
