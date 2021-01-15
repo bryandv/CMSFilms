@@ -15,7 +15,6 @@ export const HeaderWrapper = styled.header`
   padding: 0 5%;
   margin-bottom: 1.45rem;
   z-index: 999;
-
   a {
     display: flex;
     width: 200px;
@@ -24,7 +23,6 @@ export const HeaderWrapper = styled.header`
     text-align: center;
     justify-content: center;
   }
-
   @media (max-width: ${MEDIA_QUERIES.MEDIUM}) {
     display: none;
   }
@@ -37,7 +35,6 @@ export const MenuList = styled.ul`
   display: flex;
   margin: 0;
   list-style: none;
-
   li {
     display: flex;
     justify-content: center;
@@ -51,12 +48,10 @@ export const MenuList = styled.ul`
       text-decoration: none;
       padding: 0.25rem 1rem;
     }
-
     a:hover {
       color: ${COLORS.TERTIARY};
     }
   }
-
   .nav-active {
     color: ${COLORS.TERTIARY};
   }
@@ -73,11 +68,9 @@ export const HamburgerButton = styled.div`
   color: ${COLORS.TERTIARY};
   z-index: 1000;
   transition: all 0.2s ease;
-
   :hover {
     transform: scale(1.1);
   }
-
   @media (min-width: ${MEDIA_QUERIES.MEDIUM}) {
     display: none;
   }
@@ -95,9 +88,7 @@ export const CloseButton = styled.div`
   font-size: 2rem;
   cursor: pointer;
   transform-origin: 50% 50%;
-
   transition: all 0.2s ease;
-
   :hover {
     transform: scale(1.1);
   }

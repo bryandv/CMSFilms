@@ -1,17 +1,17 @@
 import React from "react"
-import { useStaticQuery, graphql,Link } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 import PropTypes from "prop-types"
 import Menu from "./Menu"
 import { HeaderWrapper, Image } from "./headerStyles/headerStyles"
 
+
+
 const Header = ({ siteTitle }) => {
-const {
-  logo,
-  wpcontent:{
-    menuItems
-  },
-} = useStaticQuery(graphql`
-query{
+ const {
+   logo,
+   wpcontent:{menuItems},
+ } = useStaticQuery(graphql`
+ query{
   logo: file(relativePath: {eq:"lgo.png"}){
     childImageSharp{
       fixed(quality:100,width: 200){
@@ -29,15 +29,15 @@ query{
       }
     }
   }
-}
-`)
-console.log(menuItems,"menuItems");
-  return <HeaderWrapper>
-      <Link to="/">
+ }
+ `)
+
+return <HeaderWrapper>
+  <Link to="/">
     <Image alt="logo artist agency" fixed = {logo.childImageSharp.fixed}/>
   </Link>
-    <Menu menuItems={menuItems.edges}/>
-    </HeaderWrapper>
+  <Menu menuItems = {menuItems.edges}/>
+  </HeaderWrapper>
 }
 
 Header.propTypes = {

@@ -1,7 +1,7 @@
 import React from 'react'
 import {graphql} from 'gatsby';
-import Layout from "../components/Layout"
-import SEO from "../components/Seo"
+import Layout from "../../components/Layout"
+import SEO from "../../components/Seo"
 import {Wrapper, Image } from "../templateStyles/artistStyles";
 
 const FilmTemplate = ({

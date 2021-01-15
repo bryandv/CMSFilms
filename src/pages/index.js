@@ -3,15 +3,14 @@ import {useStaticQuery, graphql } from "gatsby"
 
 import Layout from "../components/Layout"
 import SEO from "../components/Seo"
-import {Wrapper, Image, BottomEdgeDown,BottomEdgeUp,Artist} from "../pageStyles/pageStyles"
-import {COLORS} from "../constants"
+import {Wrapper, Image, Artist} from "../pageStyles/pageStyles"
+
 
 const IndexPage = () => {
   const{
     wpcontent:{
       page:{
         homePageMeta:{
-          homePageDescription,
           homePageHeaderDescription,
           homePageHeaderTitle,
           homePageFeaturedFilms,

@@ -27,7 +27,7 @@ exports.createPages = ({graphql,actions}) =>{
       const {id,slug} = film.node;
       createPage({
         path: slug,
-        component: path.resolve(`src/templateStyles/film.js`),
+        component: path.resolve(`src/templates/templateStyles/film.js`),
         context:{
           id,
           slug
@@ -37,16 +37,6 @@ exports.createPages = ({graphql,actions}) =>{
     
   });
 } 
-
-
-
-
-
-
-
-
-
-
 
 /* Aan de hand van dit stukje code worden de images vanuit WPgraphql omgezet tot images waarop Gatsby image optimization kan toepassen */
 exports.createResolvers = async ({
